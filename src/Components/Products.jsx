@@ -30,7 +30,7 @@ const Products = () => {
   return (
     <Box>
       <Stack display={{md:"flex"}} flexDirection={{md: "row "}}>
-      <Box>
+      <Box minWidth={"15rem"}>
         <FilterComponent />
       </Box>
 
