@@ -2,6 +2,7 @@ import * as types from "./actionTypes";
 const initialState = {
   products: [],
   error: "",
+  currentProduct:{}, 
   loading: false,
 };
 const reducer = (state = initialState, action) => {
@@ -26,6 +27,26 @@ const reducer = (state = initialState, action) => {
         error: payload,
         loading: false,
       };
+      case types.GET_SINGLE_PRODUCT_REQUEST:
+        return {
+          ...state,
+          error: " ",
+          
+          loading: true,
+        };
+      case types.GET_SINGLE_PRODUCT_SUCCESS:
+        return {
+          ...state,
+          error: "",
+          currentProduct:payload,
+          loading: false,
+        };
+      case types.GET_SINGLE_PRODUCT_FAILURE:
+        return {
+          ...state,
+          error: payload,
+          loading: false,
+        };
     default:
       return state;
   }
